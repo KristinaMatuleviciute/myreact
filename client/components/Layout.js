@@ -2,13 +2,14 @@
 
 import React from 'react';
 import Nav from './Navigation';
+import Sidenav from './Sidenav';
 import Footer from './Footer';
 
 export default class Layout extends React.Component {
   render () {
     const {location} = this.props
     const containerStyle = {
-      marginTop: '60px',
+      marginTop: '10px',
 
 
     }
@@ -16,7 +17,7 @@ export default class Layout extends React.Component {
       <div>
         {/*loading navigation bar */}
       <Nav location={location}/>
-      <div className='container' style={containerStyle}>
+      <div className='container-fluid' style={containerStyle}>
       <div className='row'>
       <div className='col-lg-12'>
         {/* rendering children components */}
