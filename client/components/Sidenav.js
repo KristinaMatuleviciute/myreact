@@ -16,7 +16,7 @@ export default class Navigation extends Component {
 
 }
   render () {
-    var style = {padding:'20px'};
+    var style = {paddingRight:'20px'};
     const { visible } = this.state
       return (
         <div style={style} >
