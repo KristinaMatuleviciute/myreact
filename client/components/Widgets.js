@@ -6,7 +6,7 @@ import { Accordion, Sidebar, Segment, Button, Menu, Image, Icon, Header } from '
 import { LinkContainer } from 'react-router-bootstrap';
 
 
-export default class Index extends React.Component {
+export default class Widgets extends React.Component {
   constructor (props) {
     super(props)
     this.state = { visible: false }
@@ -17,7 +17,7 @@ export default class Index extends React.Component {
   render () {
     const { visible } = this.state
     return(
-      <div >
+      <div>
 
       <Accordion>
          <Accordion.Title>

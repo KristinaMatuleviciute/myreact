@@ -44,12 +44,26 @@ body {
   box-shadow: 0 1px 1px #bebebe;
 
 }
+.sidebar{
+  float:left;
+  position: relative;
+  width: 150px;
+  height: 205px;
+  margin: 2px;
+  margin-bottom: 3px;
+  padding: 2px;
+  color: #666;
+  border: 1px solid #bebebe;
+}
+.sidebarItem{
+  border: 1px solid #bebebe;
+}
 
 .widgetBox{
-
+float:left;
 position: relative;
-width: 191px;
-height:155px;
+width: 140px;
+height: 105px;
 margin: 2px;
 margin-bottom: 3px;
 padding: 2px;
