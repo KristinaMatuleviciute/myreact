@@ -21,7 +21,7 @@ export default class Layout extends React.Component {
       <div className='container-fluid' style={containerStyle}>
         <div className='row'>
           <div className='col-lg-12'>
-            <div className='row' style={rowStyle}>
+            <div className='row'>
               <Sidenav/>
               {/* rendering children components */}
               {this.props.children}

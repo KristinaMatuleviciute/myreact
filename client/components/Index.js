@@ -19,24 +19,22 @@ import { LinkContainer } from 'react-router-bootstrap';
 export default class Index extends React.Component {
   constructor (props) {
     super(props)
-    this.state = { visible: false }
+    this.state = { visible: true }
 
       this.toggleVisibility = () => this.setState({ visible: !this.state.visible })
 
 }
   render () {
     var style = { marging:'50px'};
-    var tabstyle = { margingBottom:'500px'};
     const { visible } = this.state
     const panes = [
-  { menuItem: 'Yesterday', render: () => <Tab.Pane>yesterday graphs</Tab.Pane> },
+  { menuItem: 'Yesterday', render: () => <Tab.Pane>Yesterday graphs</Tab.Pane> },
   { menuItem: 'Today', render: () => <Tab.Pane>Today graphs</Tab.Pane> },
   { menuItem: 'Tomorrow', render: () => <Tab.Pane>Tomorrow graphs</Tab.Pane> },
 ]
-
     return(
       <div>
-        <div>
+        <div className="active content">
           <Accordion >
              <Accordion.Title>
                <Icon name='dropdown' />
@@ -50,7 +48,6 @@ export default class Index extends React.Component {
                   Load
                 </Menu.Item>
                 </LinkContainer> </div>
-
                 <div className="widgetBox">
                 <LinkContainer to="price">
                 <Menu.Item name='price'>
