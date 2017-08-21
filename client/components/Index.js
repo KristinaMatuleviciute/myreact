@@ -1,9 +1,11 @@
 'use strict';
 
 import React from 'react';
-import img from '../assets/img/linechart.png'
+
 import {
   Accordion,
+  Divider,
+  Transition,
   Sidebar,
   Segment,
   Button,
@@ -25,7 +27,12 @@ export default class Index extends React.Component {
 
 }
   render () {
-    var style = { marging:'50px'};
+    const panels = {
+        title: 'widgets',
+
+      }
+    const stylePanels = { margin:'15px'};
+    const styleWidgetboxes = { margin:'15px'};
     const { visible } = this.state
     const panes = [
   { menuItem: 'Yesterday', render: () => <Tab.Pane>Yesterday graphs</Tab.Pane> },
@@ -34,56 +41,54 @@ export default class Index extends React.Component {
 ]
     return(
       <div>
-        <div className="active content">
-          <Accordion >
-             <Accordion.Title>
-               <Icon name='dropdown' />
-             </Accordion.Title>
-             <Accordion.Content>
-             <div >
-                <div className="widgetBox">
-                <LinkContainer to="load">
-                <Menu.Item name='load'>
-                  <Icon name='shopping basket' />
-                  Load
-                </Menu.Item>
-                </LinkContainer> </div>
-                <div className="widgetBox">
-                <LinkContainer to="price">
-                <Menu.Item name='price'>
-                  <Icon name='euro' />
-                  Price
-                </Menu.Item>
-                </LinkContainer> </div>
-                <div className="widgetBox">
-                <LinkContainer to="wind">
-                <Menu.Item name='wind'>
-                  <Icon name='location arrow' />
-                  Wind
-                </Menu.Item>
-                </LinkContainer></div>
-                <div className="widgetBox">
-                <LinkContainer to="solar">
-                <Menu.Item name='sun'>
-                  <Icon name='sun' />
-                  Solar
-                </Menu.Item>
-                </LinkContainer></div>
-                <div className="widgetBox">
-                <LinkContainer to="weather">
-                <Menu.Item name='weather'>
-                  <Icon name='umbrella' />
-                  Weather
-                </Menu.Item>
-                </LinkContainer></div>
-             </div>
-            </Accordion.Content>
-          </Accordion>
-        </div>
-        <div style={style} >
-           <div >
-          <Tab panes={panes} />
-         </div>
+      <div >
+      <Icon name='dropdown' content={visible ? 'Hide' : 'Show'} onClick={this.toggleVisibility}/>
+       <Divider hidden />
+       <Transition visible={visible} animation='scale' duration={500}>
+       <div style={styleWidgetboxes}>
+          <div className="widgetBox">
+          <LinkContainer to="load">
+          <Menu.Item name='load'>
+            <Icon name='shopping basket' />
+            Load
+          </Menu.Item>
+          </LinkContainer> </div>
+          <div className="widgetBox">
+          <LinkContainer to="price">
+          <Menu.Item name='price'>
+            <Icon name='euro' />
+            Price
+          </Menu.Item>
+          </LinkContainer> </div>
+          <div className="widgetBox">
+          <LinkContainer to="wind">
+          <Menu.Item name='wind'>
+            <Icon name='location arrow' />
+            Wind
+          </Menu.Item>
+          </LinkContainer></div>
+          <div className="widgetBox">
+          <LinkContainer to="solar">
+          <Menu.Item name='sun'>
+            <Icon name='sun' />
+            Solar
+          </Menu.Item>
+          </LinkContainer></div>
+          <div className="widgetBox">
+          <LinkContainer to="weather">
+          <Menu.Item name='weather'>
+            <Icon name='umbrella' />
+            Weather
+          </Menu.Item>
+          </LinkContainer></div>
+       </div>
+       </Transition>
+     </div>
+
+        <div style={stylePanels} >
+          <div >
+           <Tab panes={panes} />
+          </div>
         </div>
       </div>
     )

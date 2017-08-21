@@ -25,7 +25,7 @@ export default class Navigation extends Component {
             </Menu.Item>
          </LinkContainer>
           <Menu.Menu position='right'>
-                <Dropdown item trigger={trigger} >
+             <Dropdown item trigger={trigger} >
                 <Dropdown.Menu>
                 <Dropdown.Item>Profile</Dropdown.Item>
                 <Dropdown.Item>Settings</Dropdown.Item>
