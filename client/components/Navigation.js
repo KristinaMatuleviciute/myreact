@@ -30,6 +30,9 @@ export default class Navigation extends Component {
                 <Dropdown.Item>Profile</Dropdown.Item>
                 <Dropdown.Item>Settings</Dropdown.Item>
                 <Dropdown.Item>Logout</Dropdown.Item>
+                <LinkContainer to="login">
+                <Dropdown.Item>Login</Dropdown.Item>
+                </LinkContainer>
               </Dropdown.Menu>
             </Dropdown>
           </Menu.Menu>

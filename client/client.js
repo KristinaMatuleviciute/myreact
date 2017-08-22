@@ -14,6 +14,7 @@ import Solar from './components/Solar';
 import Settings from './components/Settings';
 import Weather from './components/Weather';
 import Wind from './components/Wind';
+import Login from './components/Login';
 
 const app = document.getElementById('app');
 
@@ -29,6 +30,7 @@ ReactDOM.render(
       <Route path='settings' name='settings' component={Settings}></Route>
       <Route path='weather' name='weather' component={Weather}></Route>
       <Route path='wind' name='wind' component={Wind}></Route>
+      <Route path='login' name='login' component={Login}></Route>
     </Route>
   </Router>,
 app)
